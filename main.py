@@ -21,3 +21,9 @@ def intro():
     time.sleep(2)
     print("\nPlease have a look at our menu:")
     menu()
+
+def main(): 
+    ready = "no"
+    while ready != "yes": 
+        ready = input("Are you ready to order?: ")
+        if ready.lower().strip() == "yes": 
