@@ -8,6 +8,7 @@ authors = ["Replit user <<>>"]
 python = "^3.8"
 ipython = "^8.4.0"
 prettytable = "^3.3.0"
+pygame = "^2.1.2"
 
 [tool.poetry.dev-dependencies]
 python-lsp-server = {extras = ["yapf", "rope", "pyflakes"], version = "^1.5.0"}
