@@ -1,6 +1,6 @@
 #import
 import time
-
+import ast 
 #list for prices
 prices = [
     "3.00",
@@ -9,7 +9,6 @@ prices = [
     "3.00",
     "4.00",
 ]
-
 
 #Menu function
 def menu():
@@ -31,26 +30,29 @@ def intro():
     print("\nPlease have a look at our menu:")
     menu()
 
-
+#Creating a sugar function 
 def sugar():
     sugar = input("Would you like sugar with your order?: ")
-    if sugar.lower().format() == "yes":
+    if sugar.lower().format() == "yes": # making sure the code works for uppercase inputs
         print("yes to sugar ")
     elif sugar.lower().format() == "no":
         print("Okay no sugar ")
 
-
+#running the function of the intro 
 intro()
+#main start of the program starts here
 ready = "no"
-while ready != "yes":
+while ready != "yes": # creating a loop for orders
     ready = input("Are you ready to order?: ")
     if ready == "no":
         print("Let me know when you are ready to order :)")
     if ready.lower().strip() == "yes":
         name = input("order name: ")
-        order = int(input("\nWhat would you like to order?: "))
         break
+order = int(input("\nWhat would you like to order? \n(please input the number beside the coffee you would like to order):"
+            ))
 #outcomes of each coffee
+
 if order == 1:
     print("A flat white")
     quantity = int(input("How many flat white's do you want?:"))
@@ -60,26 +62,25 @@ if order == 1:
     total = quantity * float(prices[0])
     print("Your total order comes to ${}".format(total))
     payment = input("How would you like to pay for your order? Card or Cash: ")
-    if payment.lower().strip() == "card":
+    if payment.lower().strip() == "card": #creating payment method for card
         print("Please swipe you card or use paywave")
         time.sleep(1)
         print("Processing payment...")
         time.sleep(2)
         print("Accepted")
-    elif payment.strip().lower() == "cash":
+    elif payment.strip().lower() == "cash": # creating payment method for cash 
         cash = int(
             input(
-                "Please input the amount of cash you would like to pay with: ")
+                "Please input the amount of cash you would like to pay with$: ")
         )
         total_order = total - cash
-        total_order = abs(total_order)
+        total_order = abs(total_order) # making sure that the value of total_order is given back 
         if cash >= total:
-            print("Here is your change ${}".format(total_order))
+            print("Here is your change ${}".format(total_order)) # giving customer there change 
         elif cash < total:
             print("You do not have enough money")
             exit()
-#Seperation
-
+#Seperation 2
 if order == 2:
     print("A Cappaccino")
     quantity = int(input("How many cappaccino's do you want?:"))
@@ -107,7 +108,7 @@ if order == 2:
         elif cash < total:
             print("You do not have enough money")
             exit()
-
+#seperation for 3
 if order == 3:
     print("A Latte")
     quantity = int(input("How many Latte's do you want?:"))
@@ -135,7 +136,7 @@ if order == 3:
         elif cash < total:
             print("You do not have enough money")
             exit()
-
+# seperation for 4 
 if order == 4:
     print("A decaf")
     quantity = int(input("How many decaf's do you want?:"))
@@ -163,7 +164,7 @@ if order == 4:
         elif cash < total:
             print("You do not have enough money")
             exit()
-
+#seperation for 5
 if order == 5:
     print("A hot chocolate")
     quantity = int(input("How many hot chocolate's do you want?:"))
@@ -179,7 +180,7 @@ if order == 5:
         print("Processing payment...")
         time.sleep(2)
         print("Accepted")
-    elif payment.strip().lower() == "cash":
+    elif payment.strip().lower() == "cash": # allowing for uppercase input 
         cash = int(
             input(
                 "Please input the amount of cash you would like to pay with: ")
@@ -192,7 +193,7 @@ if order == 5:
             print("You do not have enough money")
             exit()
 
-
+#reciept function 
 def reciept():
     print("\n")
     print("-" * 30)
@@ -205,5 +206,7 @@ def reciept():
         print("Change: {}".format(total_order))
     print("-" * 30)
 
-
+#calling for function 
 reciept()
+#printing ending
+print("Thank you for ordering at CCC cafe enjoy the rest of your day! :)")
