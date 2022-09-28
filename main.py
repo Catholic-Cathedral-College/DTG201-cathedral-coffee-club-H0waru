@@ -67,16 +67,17 @@ if order == 1:
         time.sleep(2)
         print("Accepted")
     elif payment.strip().lower() == "cash":
-        cash = input(
-            "Please input the amount of cash you would like to pay with: ")
-        total_order = total - int(cash)
-        total_order = abs(total)
-        if total > 0:
-            print("Here is your change ${}".format(total))
-        elif total <= 0:
+        cash = int(
+            input(
+                "Please input the amount of cash you would like to pay with: ")
+        )
+        total_order = total - cash
+        total_order = abs(total_order)
+        if cash >= total:
+            print("Here is your change ${}".format(total_order))
+        elif cash < total:
             print("You do not have enough money")
-        else:
-            print("Invalid input")
+            exit()
 #Seperation
 
 if order == 2:
@@ -85,7 +86,7 @@ if order == 2:
     print("{} cappaccino's ".format(quantity))
     sugar()
     #Creating a payment method
-    total = quantity * float(prices[1])
+    total = quantity * float(prices[0])
     print("Your total order comes to ${}".format(total))
     payment = input("How would you like to pay for your order? Card or Cash: ")
     if payment.lower().strip() == "card":
@@ -95,16 +96,17 @@ if order == 2:
         time.sleep(2)
         print("Accepted")
     elif payment.strip().lower() == "cash":
-        cash = input(
-            "Please input the amount of cash you would like to pay with: ")
-        total_order = total - int(cash)
-        total_order = abs(total)
-        if total > 0:
-            print("Here is your change ${}".format(total))
-        elif total <= 0:
+        cash = int(
+            input(
+                "Please input the amount of cash you would like to pay with: ")
+        )
+        total_order = total - cash
+        total_order = abs(total_order)
+        if cash >= total:
+            print("Here is your change ${}".format(total_order))
+        elif cash < total:
             print("You do not have enough money")
-        else:
-            print("Invalid input")
+            exit()
 
 if order == 3:
     print("A Latte")
@@ -112,7 +114,7 @@ if order == 3:
     print("{} Latte ".format(quantity))
     sugar()
     #Creating a payment method
-    total = quantity * float(prices[2])
+    total = quantity * float(prices[0])
     print("Your total order comes to ${}".format(total))
     payment = input("How would you like to pay for your order? Card or Cash: ")
     if payment.lower().strip() == "card":
@@ -122,16 +124,17 @@ if order == 3:
         time.sleep(2)
         print("Accepted")
     elif payment.strip().lower() == "cash":
-        cash = input(
-            "Please input the amount of cash you would like to pay with: ")
-        total_order = total - int(cash)
-        total_order = abs(total)
-        if total > 0:
-            print("Here is your change ${}".format(total))
-        elif total <= 0:
+        cash = int(
+            input(
+                "Please input the amount of cash you would like to pay with: ")
+        )
+        total_order = total - cash
+        total_order = abs(total_order)
+        if cash >= total:
+            print("Here is your change ${}".format(total_order))
+        elif cash < total:
             print("You do not have enough money")
-        else:
-            print("Invalid input")
+            exit()
 
 if order == 4:
     print("A decaf")
@@ -139,7 +142,7 @@ if order == 4:
     print("{} decaf ".format(quantity))
     sugar()
     #Creating a payment method
-    total = quantity * float(prices[3])
+    total = quantity * float(prices[0])
     print("Your total order comes to ${}".format(total))
     payment = input("How would you like to pay for your order? Card or Cash: ")
     if payment.lower().strip() == "card":
@@ -149,16 +152,17 @@ if order == 4:
         time.sleep(2)
         print("Accepted")
     elif payment.strip().lower() == "cash":
-        cash = input(
-            "Please input the amount of cash you would like to pay with: ")
-        total_order = total - int(cash)
-        total_order = abs(total)
-        if total > 0:
-            print("Here is your change ${}".format(total))
-        elif total <= 0:
+        cash = int(
+            input(
+                "Please input the amount of cash you would like to pay with: ")
+        )
+        total_order = total - cash
+        total_order = abs(total_order)
+        if cash >= total:
+            print("Here is your change ${}".format(total_order))
+        elif cash < total:
             print("You do not have enough money")
-        else:
-            print("Invalid input")
+            exit()
 
 if order == 5:
     print("A hot chocolate")
@@ -166,7 +170,7 @@ if order == 5:
     print("{} hot chocolate's ".format(quantity))
     sugar()
     #Creating a payment method
-    total = quantity * float(prices[4])
+    total = quantity * float(prices[0])
     print("Your total order comes to ${}".format(total))
     payment = input("How would you like to pay for your order? Card or Cash: ")
     if payment.lower().strip() == "card":
@@ -176,16 +180,17 @@ if order == 5:
         time.sleep(2)
         print("Accepted")
     elif payment.strip().lower() == "cash":
-        cash = input(
-            "Please input the amount of cash you would like to pay with: ")
-        total_order = total - int(cash)
-        total_order = abs(total)
-        if total > 0:
-            print("Here is your change ${}".format(total))
-        elif total <= 0:
+        cash = int(
+            input(
+                "Please input the amount of cash you would like to pay with: ")
+        )
+        total_order = total - cash
+        total_order = abs(total_order)
+        if cash >= total:
+            print("Here is your change ${}".format(total_order))
+        elif cash < total:
             print("You do not have enough money")
-        else:
-            print("Invalid input")
+            exit()
 
 
 def reciept():
@@ -197,7 +202,7 @@ def reciept():
     print("{} your total order is ${}\n".format(name, total))
     print("Payment method was {}".format(payment))
     if payment == "cash":
-        print("Change: {}".format(total))
+        print("Change: {}".format(total_order))
     print("-" * 30)
 
 
