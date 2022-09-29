@@ -58,7 +58,7 @@ if order == 1:
     print("{} flat whites ".format(quantity))
     sugar()
     #Creating a payment method
-    total = quantity * float(prices[0])
+    total = quantity * float(prices[0]) #finding the price of coffee
     print("Your total order comes to ${}".format(total))
     payment = input("How would you like to pay for your order? Card or Cash: ")
     if payment.lower().strip() == "card": #creating payment method for card
@@ -129,7 +129,7 @@ if order == 3:
                 "Please input the amount of cash you would like to pay with: ")
         )
         total_order = total - cash
-        total_order = abs(total_order)
+        total_order = abs(total_order) #making value of total order absolute 
         if cash >= total:
             print("Here is your change ${}".format(total_order))
         elif cash < total:
