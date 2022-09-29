@@ -208,4 +208,5 @@ def reciept():
 #calling for function 
 reciept()
 #printing ending
-print("Thank you for ordering at CCC cafe enjoy the rest of your day! :)")
+time.sleep(2)
+print("\nThank you for ordering at CCC cafe enjoy the rest of your day! :)")
