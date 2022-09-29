@@ -1,6 +1,5 @@
 #import
 import time
-import ast 
 #list for prices
 prices = [
     "3.00",
