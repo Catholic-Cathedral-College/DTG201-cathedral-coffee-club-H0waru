@@ -86,7 +86,7 @@ if order == 2:
     print("{} cappaccino's ".format(quantity))
     sugar()
     #Creating a payment method
-    total = quantity * float(prices[0])
+    total = quantity * float(prices[1])
     print("Your total order comes to ${}".format(total))
     payment = input("How would you like to pay for your order? Card or Cash: ")
     if payment.lower().strip() == "card":
@@ -114,7 +114,7 @@ if order == 3:
     print("{} Latte ".format(quantity))
     sugar()
     #Creating a payment method
-    total = quantity * float(prices[0])
+    total = quantity * float(prices[2])
     print("Your total order comes to ${}".format(total))
     payment = input("How would you like to pay for your order? Card or Cash: ")
     if payment.lower().strip() == "card":
@@ -142,7 +142,7 @@ if order == 4:
     print("{} decaf ".format(quantity))
     sugar()
     #Creating a payment method
-    total = quantity * float(prices[0])
+    total = quantity * float(prices[3])
     print("Your total order comes to ${}".format(total))
     payment = input("How would you like to pay for your order? Card or Cash: ")
     if payment.lower().strip() == "card":
@@ -170,7 +170,7 @@ if order == 5:
     print("{} hot chocolate's ".format(quantity))
     sugar()
     #Creating a payment method
-    total = quantity * float(prices[0])
+    total = quantity * float(prices[4])
     print("Your total order comes to ${}".format(total))
     payment = input("How would you like to pay for your order? Card or Cash: ")
     if payment.lower().strip() == "card":
